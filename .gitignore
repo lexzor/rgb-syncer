@@ -4,3 +4,11 @@
 *.ilk
 *.idb
 *.pdb
+*.vsidx
+*.suo
+*.db
+*.ipch
+*.obj
+*.iobj
+*.ipdb
+*.exe

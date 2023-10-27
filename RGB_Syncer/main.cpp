@@ -4,6 +4,8 @@
 constexpr const char* GCC_PATH = "C:\\Program Files\\GIGABYTE\\Control Center\\GCC.exe";
 constexpr const char* ICUE_PATH = "C:\\Program Files\\Corsair\\Corsair iCUE5 Software\\ICUE.exe";
 
+constexpr const int SLEEP_TIME = 2500;
+
 inline bool file_exists(const char* path);
 inline char* get_open_command(const char* path);
 
@@ -19,7 +21,7 @@ int main() {
     }
 
     std::system(get_open_command(ICUE_PATH));
-    Sleep(2500);  
+    Sleep(SLEEP_TIME);  
     std::system(get_open_command(GCC_PATH));
 
     return 1;
@@ -27,7 +29,7 @@ int main() {
 
 inline char* get_open_command(const char* path){
     const char* explorer = "explorer ";
-    size_t iSize = strlen(GCC_PATH) + strlen(ICUE_PATH) + 1;
+    size_t iSize = strlen(path) + strlen(explorer) + 1;
 
     char* command = new char[iSize];
     memset(command, 0, iSize);
